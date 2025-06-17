@@ -1,0 +1,87 @@
+<h2> My Tasks</h2>
+
+<div>
+  <button (click)="filter = 'all'">All</button>
+  <button (click)="filter = 'completed'">Completed</button>
+  <button (click)="filter = 'incomplete'">Incomplete</button>
+  <button (click)="filter = 'low'">Low</button>
+  <button (click)="filter = 'medium'">Medium</button>
+  <button (click)="filter = 'high'">High</button>
+  <button (click)="filter = 'past-due'">Past Due</button>
+  <button (click)="filter = 'due-soon'">Due Soon</button>
+</div>
+
+<div class="mb-3">
+  <label for="sortSelect" class="form-label me-2">Sort By:</label>
+  <select id="sortSelect" [(ngModel)]="sortBy" class=" form-select w-auto d-inline-block">
+    <option value="none">None</option>
+    <option value="deadline-asc">Deadline (Soonest First)</option>
+    <option value="deadline-desc">Deadline (Latest First)</option>
+    <option value="priority-low">Priority (Low First)</option>
+    <option value="priority-high">Priority (High First)</option>
+  </select>
+</div>
+
+<table mat-table [dataSource]="filteredTasks" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="check">
+  <th mat-header-cell *matHeaderCellDef> Completed? </th>
+  <td mat-cell *matCellDef="let task">
+    <input 
+      type="checkbox" 
+      [checked]="task.completed" 
+      (change)="toggleCompleted(task)"
+    />
+  </td>
+</ng-container>
+
+<ng-container matColumnDef="edit">
+  <th mat-header-cell *matHeaderCellDef> Edit Task </th>
+  <td mat-cell *matCellDef="let task">
+    <button (click)="deleteTask(task._id)">Delete</button> |
+    <button [routerLink]="['/EditTask', task._id]">Edit</button>
+  </td>
+</ng-container>
+
+<ng-container matColumnDef="status">
+  <th mat-header-cell *matHeaderCellDef> Status </th>
+  <td mat-cell *matCellDef="let task">
+    <div *ngIf="isOverdue(task)" class="text-danger fw-bold">
+      This task is overdue!
+    </div>
+    <div *ngIf="!isOverdue(task) && isDueSoon(task)" class="text-warning fw-bold">
+      Deadline approaching soon!
+    </div>
+  </td>
+</ng-container>
+
+
+  <ng-container matColumnDef="description" >
+    <th mat-header-cell *matHeaderCellDef> Description </th>
+    <td mat-cell *matCellDef="let task" [ngClass]="{ 'completed': task.completed }"> {{task.description}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="deadline">
+    <th mat-header-cell *matHeaderCellDef> Deadline </th>
+    <td mat-cell *matCellDef="let task" [ngClass]="{ 'completed': task.completed }"> {{task.deadline | date }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="completed">
+    <th mat-header-cell *matHeaderCellDef> Completed </th>
+    <td mat-cell *matCellDef="let task" [ngClass]="{ 'completed': task.completed }"> {{task.completed}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="priority">
+    <th mat-header-cell *matHeaderCellDef> Priority </th>
+    <td mat-cell *matCellDef="let task" [ngClass]="{
+    'completed': task.completed,
+    'priority-high': task.priority === 'high',
+    'priority-medium': task.priority === 'medium',
+    'priority-low': task.priority === 'low'
+  }"> {{task.priority}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay;" ></tr>
+</table>
+

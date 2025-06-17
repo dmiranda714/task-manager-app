@@ -1,0 +1,51 @@
+<h2> My Tasks</h2>
+
+<div>
+  <button (click)="filter = 'all'">All</button>
+  <button (click)="filter = 'completed'">Completed</button>
+  <button (click)="filter = 'incomplete'">Incomplete</button>
+  <button (click)="filter = 'low'">Low</button>
+  <button (click)="filter = 'medium'">Medium</button>
+  <button (click)="filter = 'high'">High</button>
+  <button (click)="filter = 'past-due'">Past Due</button>
+  <button (click)="filter = 'due-soon'">Due Soon</button>
+</div>
+
+<div class="mb-3">
+  <label for="sortSelect" class="form-label me-2">Sort By:</label>
+  <select id="sortSelect" [(ngModel)]="sortBy" class=" form-select w-auto d-inline-block">
+    <option value="none">None</option>
+    <option value="deadline-asc">Deadline (Soonest First)</option>
+    <option value="deadline-desc">Deadline (Latest First)</option>
+    <option value="priority-low">Priority (Low First)</option>
+    <option value="priority-high">Priority (High First)</option>
+  </select>
+</div>
+
+<ul *ngIf="tasks.length > 0; else noTasks">
+  <li *ngFor="let task of filteredTasks" [ngClass]="{'completed' : task.completed, 'priority-high' : task.priority==='high', 'priority-medium' : task.priority==='medium', 
+  'priority-low' : task.priority==='low'}">
+    <input 
+      type="checkbox" 
+      [checked]="task.completed" 
+      (change)="toggleCompleted(task)"
+    />
+    <strong>{{ task.description }}</strong><br>
+    Deadline: {{ task.deadline | date }}<br>
+    <div *ngIf="isOverdue(task)" class="text-danger fw-bold">
+     This task is overdue!
+  </div>
+  <div *ngIf="!isOverdue(task) && isDueSoon(task)" class="text-warning fw-bold">
+     Deadline approaching soon!
+  </div>
+    Priority: {{ task.priority }}<br>
+    <button (click)="deleteTask(task._id)">Delete</button>
+    <button [routerLink]="['/EditTask', task._id]">Edit</button>
+    <hr>
+  </li>
+</ul>
+
+
+<ng-template #noTasks>
+    <p>No tasks yet. <a routerLink="/AddTask">Add one</a></p>
+</ng-template>

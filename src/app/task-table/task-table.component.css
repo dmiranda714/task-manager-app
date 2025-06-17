@@ -1,0 +1,40 @@
+table {
+  width: 100%;
+}
+
+.completed {
+    text-decoration: line-through !important;
+    color: grey;
+}
+
+.priority-high {
+  border-left: 6px solid #dc3545; /* Bootstrap red */
+  background-color: #f8d7da !important;
+  padding-left: 10px;
+}
+
+.priority-medium {
+  border-left: 6px solid #fd7e14; /* Bootstrap orange */
+  background-color: #fff3cd !important;
+  padding-left: 10px;
+}
+
+.priority-low {
+  border-left: 6px solid #198754; /* Bootstrap green */
+  background-color: #d1e7dd !important;
+  padding-left: 10px;
+}
+
+.overdue {
+  border-left: 4px solid red;
+  padding-left: 10px;
+  background-color: #ffe6e6  /* light red background */
+}
+
+.due-soon {
+  border-left: 4px solid orange;
+  padding-left: 10px;
+  background-color: #fff4e5; /* light orange background */
+}
+
+

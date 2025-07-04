@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Task } from '../models/task.model';
 import { TaskService } from '../services/task.service';
 import {MatTableModule} from '@angular/material/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-task-table',
@@ -13,7 +14,7 @@ export class TaskTableComponent implements OnInit{
   tasks: Task[] = [];
   displayedColumns: any;
   
-  constructor(private taskService: TaskService) {
+  constructor(private taskService: TaskService, private router: Router) {
 
   }
 
@@ -117,6 +118,13 @@ export class TaskTableComponent implements OnInit{
     return diff > 0 && diff <= threeDaysInMs;
   }
 
-  //This is Danny and testing changes for Github Desktop!
+  logout() {
+  if (confirm('Are you sure you want to log out?')) {
+    localStorage.clear();
+    alert('Logged out successfully.');
+    this.router.navigate(['/login']);
+  }
+}
+
 
 }

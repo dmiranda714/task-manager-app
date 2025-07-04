@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../models/task.model';
 import { TaskService } from '../services/task.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class TaskListComponent implements OnInit{
   
   tasks: Task[] = [];
   
-  constructor(private taskService: TaskService) {
+  constructor(private taskService: TaskService, private router: Router) {
 
   }
 
@@ -113,5 +114,13 @@ export class TaskListComponent implements OnInit{
     const threeDaysInMs = 3 * 24 * 60 * 60 * 1000;
     return diff > 0 && diff <= threeDaysInMs;
   }
+
+  logout() {
+  if (confirm('Are you sure you want to log out?')) {
+    localStorage.clear();
+    alert('Logged out successfully.');
+    this.router.navigate(['/login']);
+  }
+}
 
 }

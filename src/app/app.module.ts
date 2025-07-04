@@ -13,6 +13,9 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
 import { TaskTableComponent } from './task-table/task-table.component';
 import { MatTable, MatTableModule } from '@angular/material/table';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -21,7 +24,10 @@ import { MatTable, MatTableModule } from '@angular/material/table';
     AppComponent,
     TaskListComponent,
     TaskFormComponent,
-    TaskTableComponent
+    TaskTableComponent,
+    RegisterComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

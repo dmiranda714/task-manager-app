@@ -1,0 +1,37 @@
+<div class="button-group">
+    <button routerLink="/">Home</button>
+</div>
+
+<h2>Register</h2>
+
+<form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+    <label for="username">Username:</label>
+    <input
+        type="text"
+        id="username"
+        name="username"
+        [(ngModel)]="user.username"
+        required
+        />
+    <label for="password">Password:</label>
+    <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="user.password"
+        required
+        />
+
+    <label for="role">Role:</label>
+    <select id="role" name="role" [(ngModel)] = "user.role">
+        <option value="viewer">viewer</option>
+        <option value="editor">Editor</option>
+        <option value="admin">Admin</option>
+    </select>
+
+    <button type="submit">Register</button>
+</form>
+
+<p *ngIf="message">{{message}}</p>
+
+

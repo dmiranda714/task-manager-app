@@ -1,3 +1,7 @@
+<div class="logout-wrapper">
+  <button (click)="logout()">Logout</button>
+</div>
+
 <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
   <label>Description</label>
   <input type="text" formControlName="description" />

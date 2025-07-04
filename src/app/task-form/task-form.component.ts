@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TaskService } from '../services/task.service';
 import { Task } from '../models/task.model';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-task-form',
@@ -49,7 +50,10 @@ export class TaskFormComponent implements OnInit {
 
   onSubmit(): void {
   if (this.taskForm.valid) {
-    const task: Task = this.taskForm.value;
+    const userId = this.taskService.getUserId();
+    const task: Task = {
+      ...this.taskForm.value, 
+      userId };
     const taskId = this.activatedRoute.snapshot.paramMap.get('id');
 
     if (taskId) {
@@ -78,6 +82,13 @@ export class TaskFormComponent implements OnInit {
   }
 }
 
+logout() {
+  if (confirm('Are you sure you want to log out?')) {
+    localStorage.clear();
+    alert('Logged out successfully.');
+    this.router.navigate(['/login']);
+  }
+}
     
 
 }

@@ -37,4 +37,9 @@ table {
   background-color: #fff4e5; /* light orange background */
 }
 
-
+.logout-wrapper {
+  position: fixed; 
+  top: 10px;       
+  right: 10px;     
+  z-index: 999; 
+}

@@ -14,12 +14,23 @@ export class TaskService {
 
    }
 
+   getUserId(): string {
+    return localStorage.getItem('userId') || '';
+   }
+
+   getUserRole(): string {
+    return localStorage.getItem('userRole') || '';
+   }
+
    addTask(task: Task): Observable<void>{
     return this.http.post<void>(this.apiURL+'AddTask', task);
    }
 
    getTasks(): Observable<Task[]>{
-    return this.http.get<Task[]>(this.apiURL+'GetTasks')
+    const userId = this.getUserId();
+    const role = this.getUserRole();
+    console.log('Calling GetTasks with:', {userId, role});
+    return this.http.get<Task[]>(`${this.apiURL}GetTasks?userId=${userId}&role=${role}`);
    }
 
    updateTaskStatus(task: Task): Observable<any> {

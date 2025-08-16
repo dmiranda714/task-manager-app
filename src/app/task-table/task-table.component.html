@@ -8,7 +8,9 @@
   <a routerLink="/ViewTable">View Table Results</a>
 </nav>
 
-<h2> My Tasks</h2>
+<div *ngIf="username">
+<h2>Hello {{username}} ({{userRole}}), Welcome to your Task Manager!</h2>
+</div>
 
 <div>
   <button (click)="filter = 'all'">All</button>

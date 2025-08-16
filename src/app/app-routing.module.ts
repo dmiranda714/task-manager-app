@@ -7,14 +7,15 @@ import { TaskTableComponent } from './task-table/task-table.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { authGuard } from './auth.guard';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'ViewTasks', component: TaskListComponent },
-  { path: 'AddTask', component: TaskFormComponent },
-  { path: 'EditTask/:id', component: TaskFormComponent},
-  { path: 'ViewTable', component: TaskTableComponent}, 
+  { path: 'ViewTasks', component: TaskListComponent, canActivate: [authGuard]},
+  { path: 'AddTask', component: TaskFormComponent, canActivate: [authGuard] },
+  { path: 'EditTask/:id', component: TaskFormComponent, canActivate: [authGuard]},
+  { path: 'ViewTable', component: TaskTableComponent, canActivate: [authGuard]}, 
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent}
 

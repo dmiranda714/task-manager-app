@@ -27,10 +27,7 @@ export class TaskService {
    }
 
    getTasks(): Observable<Task[]>{
-    const userId = this.getUserId();
-    const role = this.getUserRole();
-    console.log('Calling GetTasks with:', {userId, role});
-    return this.http.get<Task[]>(`${this.apiURL}GetTasks?userId=${userId}&role=${role}`);
+    return this.http.get<Task[]>(`${this.apiURL}GetTasks`);
    }
 
    updateTaskStatus(task: Task): Observable<any> {

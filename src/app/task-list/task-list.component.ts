@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Task } from '../models/task.model';
 import { TaskService } from '../services/task.service';
 import { Router } from '@angular/router';
+import { TokenType } from '@angular/compiler';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -11,13 +13,17 @@ import { Router } from '@angular/router';
 })
 export class TaskListComponent implements OnInit{
   
+  username: string | null = '';
+  userRole: string | null = '';
   tasks: Task[] = [];
   
-  constructor(private taskService: TaskService, private router: Router) {
+  constructor(private taskService: TaskService, private router: Router, private authService: AuthService) {
 
   }
 
   ngOnInit(): void {
+    this.username = this.authService.getUsername();
+    this.userRole = this.authService.getUserRole();
     this.taskService.getTasks().subscribe({
       next: (data) => {
         this.tasks = data;

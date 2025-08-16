@@ -3,6 +3,7 @@ import { Task } from '../models/task.model';
 import { TaskService } from '../services/task.service';
 import {MatTableModule} from '@angular/material/table';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-task-table',
@@ -11,16 +12,20 @@ import { Router } from '@angular/router';
 })
 export class TaskTableComponent implements OnInit{
 
+  username: string | null = '';
+  userRole: string | null = '';
   tasks: Task[] = [];
   displayedColumns: any;
   
-  constructor(private taskService: TaskService, private router: Router) {
+  constructor(private taskService: TaskService, private router: Router, private authService: AuthService) {
 
   }
 
   columnsToDisplay = ['check','edit', 'status','description', 'deadline', 'priority'];
 
   ngOnInit(): void {
+    this.username = this.authService.getUsername();
+    this.userRole = this.authService.getUserRole();
     this.taskService.getTasks().subscribe({
       next: (data) => {
         this.tasks = data;

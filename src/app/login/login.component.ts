@@ -27,8 +27,7 @@ export class LoginComponent {
     this.userservice.login(this.user.username, this.user.password).subscribe({
       next: (res) => {
         console.log('Login Response', res);
-        this.userservice.saveUserId(res.userId);
-        this.userservice.saveUserRole(res.role);
+        localStorage.setItem('token', res.token);
         this.router.navigate(['ViewTasks']);
       },
       error: () => {

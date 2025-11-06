@@ -5,6 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TaskService } from '../services/task.service';
 import { Task } from '../models/task.model';
 import { UserService } from '../services/user.service';
+import { AuthService } from '../services/auth.service';
+
 
 @Component({
   selector: 'app-task-form',
@@ -21,7 +23,9 @@ export class TaskFormComponent implements OnInit {
     private formBuilder: FormBuilder,
     private taskService: TaskService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute, 
+    private authService: AuthService
+
   ) {
 
   }
@@ -83,11 +87,7 @@ export class TaskFormComponent implements OnInit {
 }
 
 logout() {
-  if (confirm('Are you sure you want to log out?')) {
-    localStorage.clear();
-    alert('Logged out successfully.');
-    this.router.navigate(['/login']);
-  }
+  this.authService.logout();
 }
     
 

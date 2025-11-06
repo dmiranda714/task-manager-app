@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
 export class UserService {
   private apiURL = 'http://localhost:3000/api/todoapp/'
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
 
    }
 
@@ -21,6 +22,7 @@ export class UserService {
    login(username: string, password: string): Observable<any> {
     return this.http.post<any>(this.apiURL+'login', {username, password});
    }
+
 
    saveUserId(userId: string) {
     localStorage.setItem('userId', userId);

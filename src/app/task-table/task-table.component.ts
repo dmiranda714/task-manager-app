@@ -4,6 +4,7 @@ import { TaskService } from '../services/task.service';
 import {MatTableModule} from '@angular/material/table';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-task-table',
@@ -17,7 +18,7 @@ export class TaskTableComponent implements OnInit{
   tasks: Task[] = [];
   displayedColumns: any;
   
-  constructor(private taskService: TaskService, private router: Router, private authService: AuthService) {
+  constructor(private taskService: TaskService, private router: Router, private authService: AuthService, private userService: UserService) {
 
   }
 
@@ -124,12 +125,7 @@ export class TaskTableComponent implements OnInit{
   }
 
   logout() {
-  if (confirm('Are you sure you want to log out?')) {
-    localStorage.clear();
-    alert('Logged out successfully.');
-    this.router.navigate(['/login']);
-  }
+  this.authService.logout();
 }
-
 
 }

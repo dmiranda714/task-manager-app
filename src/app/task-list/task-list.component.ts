@@ -4,6 +4,7 @@ import { TaskService } from '../services/task.service';
 import { Router } from '@angular/router';
 import { TokenType } from '@angular/compiler';
 import { AuthService } from '../services/auth.service';
+import { UserService } from '../services/user.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class TaskListComponent implements OnInit{
   userRole: string | null = '';
   tasks: Task[] = [];
   
-  constructor(private taskService: TaskService, private router: Router, private authService: AuthService) {
+  constructor(private taskService: TaskService, private router: Router, private authService: AuthService, private userService: UserService) {
 
   }
 
@@ -122,11 +123,7 @@ export class TaskListComponent implements OnInit{
   }
 
   logout() {
-  if (confirm('Are you sure you want to log out?')) {
-    localStorage.clear();
-    alert('Logged out successfully.');
-    this.router.navigate(['/login']);
-  }
+  this.authService.logout();
 }
 
 }

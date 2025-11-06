@@ -8,19 +8,19 @@ table {
 }
 
 .priority-high {
-  border-left: 6px solid #dc3545; /* Bootstrap red */
+  border-left: 6px solid #dc3545; 
   background-color: #f8d7da !important;
   padding-left: 10px;
 }
 
 .priority-medium {
-  border-left: 6px solid #fd7e14; /* Bootstrap orange */
+  border-left: 6px solid #fd7e14; 
   background-color: #fff3cd !important;
   padding-left: 10px;
 }
 
 .priority-low {
-  border-left: 6px solid #198754; /* Bootstrap green */
+  border-left: 6px solid #198754; 
   background-color: #d1e7dd !important;
   padding-left: 10px;
 }
@@ -28,13 +28,13 @@ table {
 .overdue {
   border-left: 4px solid red;
   padding-left: 10px;
-  background-color: #ffe6e6  /* light red background */
+  background-color: #ffe6e6  
 }
 
 .due-soon {
   border-left: 4px solid orange;
   padding-left: 10px;
-  background-color: #fff4e5; /* light orange background */
+  background-color: #fff4e5; 
 }
 
 .logout-wrapper {

@@ -1,0 +1,63 @@
+{
+  "HOMEPAGE": {
+    "TITLE": "欢迎使用任务管理器！",
+    "SUBTITLE": "请选择以下选项开始！",
+    "REGISTER": "注册",
+    "LOGIN": "登录"
+  },
+  "REGISTER": {
+  "HOME": "主页",
+  "REGISTER": "注册",
+  "USERNAME": "用户名",
+  "PASSWORD": "密码",
+  "ROLE": "角色",
+  "ROLES": {
+    "VIEWER": "查看者",
+    "EDITOR": "编辑者",
+    "ADMIN": "管理员"
+  }
+
+},
+  "LOGOUT": "退出",
+  "LOGIN": "登录",
+  "INACTIVITY_WARNING": "您已长时间未操作，即将被登出。",
+  "HOME": "主页",
+  "USERNAME": "用户名",
+  "PASSWORD": "密码",
+  "INACTIVTY_ERROR": "您因长时间未操作而被登出",
+  "VIEW_TASKS": "查看任务",
+  "ADD_TASKS": "添加任务",
+  "VIEW_TABLE_RESULTS": "查看表格结果",
+  "ALL": "全部",
+  "COMPLETED": "已完成",
+  "INCOMPLETE": "未完成",
+  "LOW": "低",
+  "MEDIUM": "中",
+  "HIGH": "高",
+  "PAST_DUE": "逾期",
+  "DUE_SOON": "即将到期",
+  "SORT_BY": "排序方式",
+  "HELLO": "你好",
+"WELCOME_MESSAGE": "欢迎使用您的任务管理器",
+"NONE": "无",
+"DEADLINE_SOONEST": "截止日期（最早优先）",
+  "DEADLINE_LATEST": "截止日期（最晚优先）",
+  "PRIORITY_LOW": "优先级（低优先）",
+  "PRIORITY_HIGH": "优先级（高优先）",
+  "DEADLINE": "截止日期",
+  "TASK_OVERDUE": "此任务已逾期！",
+  "PRIORITY": "优先级",
+  "DELETE": "删除",
+  "EDIT": "编辑",
+  "DEADLINE_APPROACHING": "截止日期即将到来！",
+  "NO_TASKS": "目前没有任务。",
+  "DESCRIPTION": "描述",
+  "EDIT_TASK": "编辑任务",
+  "STATUS": "状态",
+  "SESSION_WARNING": "会话将在30秒后过期。如不保持活动状态，您将被登出。",
+"ROLES": {
+    "VIEWER": "查看者",
+    "EDITOR": "编辑者",
+    "ADMIN": "管理员"
+  }
+}

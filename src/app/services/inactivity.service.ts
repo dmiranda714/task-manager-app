@@ -3,6 +3,7 @@ import {Router} from '@angular/router'
 import { UserService } from './user.service';
 import { Subject } from 'rxjs';
 import { AuthService } from './auth.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({ providedIn: 'root'})
 export class InactivityService {
@@ -12,7 +13,7 @@ export class InactivityService {
     private readonly timeout = 30 * 1000;
     private readonly warningTime = 15 * 1000;
 
-    constructor(private router: Router, private ngZone: NgZone, private userService: UserService) {
+    constructor(private router: Router, private ngZone: NgZone, private userService: UserService, private tranlsateService : TranslateService) {
 
     }
 
@@ -52,7 +53,9 @@ export class InactivityService {
     
 
   showWarningModal() {
-  alert("Session is about to expire in 30 seconds. You will be logged out unless you stay active.");
+    this.tranlsateService.get("SESSION_WARNING").subscribe((translatedMsg: string) => {
+      alert(translatedMsg);
+    })
     
   }
 

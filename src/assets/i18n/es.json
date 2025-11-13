@@ -1,0 +1,63 @@
+{
+  "LOGIN": "Iniciar sesión",
+  "LOGOUT": "Cerrar sesión",
+  "INACTIVITY_WARNING": "Has estado inactivo. Se cerrará tu sesión pronto.",
+  "INACTIVTY_ERROR": "Has sido desconectado por inactividad",
+  "HOME": "Inicio",
+  "USERNAME": "Nombre de usuario",
+  "PASSWORD": "Contraseña",
+  "VIEW_TASKS": "Ver tareas",
+  "ADD_TASKS": "Agregar tarea",
+  "VIEW_TABLE_RESULTS": "Ver resultados en tabla",
+  "ALL": "Todas",
+  "COMPLETED": "Completadas",
+  "INCOMPLETE": "Incompletas",
+  "LOW": "Baja",
+  "MEDIUM": "Media",
+  "HIGH": "Alta",
+  "PAST_DUE": "Vencida",
+  "DUE_SOON": "Próxima a vencer",
+  "SORT_BY": "Ordenar por",
+  "HELLO": "Hola",
+"WELCOME_MESSAGE": "Bienvenido a tu administrador de tareas",
+"NONE": "Ninguno",
+"DEADLINE_SOONEST": "Fecha límite (más próxima primero)",
+  "DEADLINE_LATEST": "Fecha límite (más lejana primero)",
+  "PRIORITY_LOW": "Prioridad (baja primero)",
+  "PRIORITY_HIGH": "Prioridad (alta primero)",
+  "DEADLINE": "Fecha límite",
+  "TASK_OVERDUE": "¡Esta tarea está vencida!",
+  "PRIORITY": "Prioridad",
+  "DELETE": "Eliminar",
+  "EDIT": "Editar",
+  "DEADLINE_APPROACHING": "¡La fecha límite se acerca!",
+  "NO_TASKS": "Aún no hay tareas",
+  "DESCRIPTION": "Descripción",
+  "EDIT_TASK": "Editar tarea",
+  "STATUS": "Estado",
+  "SESSION_WARNING": "La sesión está a punto de expirar en 30 segundos. Se cerrará si no permanece activo.",
+  "HOMEPAGE": {
+    "TITLE" :"¡Bienvenido al Administrador de Tareas!", 
+    "SUBTITLE": "¡Por favor elige una opción para comenzar!",
+    "REGISTER" : "Registrarse",
+    "LOGIN" : "Iniciar sesión"
+  },
+  "REGISTER": {
+  "HOME": "Inicio",
+  "REGISTER": "Registrarse",
+  "USERNAME": "Nombre de usuario",
+  "PASSWORD": "Contraseña",
+  "ROLE": "Rol",
+    "ROLES": {
+      "VIEWER": "Visualizador",
+      "EDITOR": "Editor",
+      "ADMIN": "Administrador"
+    }
+
+},
+"ROLES": {
+      "VIEWER": "Visualizador",
+      "EDITOR": "Editor",
+      "ADMIN": "Administrador"
+    }
+}

@@ -1,43 +1,43 @@
 <div class="logout-wrapper">
-  <button (click)="logout()">Logout</button>
+  <button (click)="logout()">{{'LOGOUT' | translate}}</button>
 </div>
 
 <nav>
-  <a routerLink="/ViewTasks">View Tasks</a> |
-  <a routerLink="/AddTask">Add Task</a>     |
-  <a routerLink="/ViewTable">View Table Results</a>
+  <a routerLink="/ViewTasks">{{"VIEW_TASKS" | translate}}</a> |
+  <a routerLink="/AddTask">{{"ADD_TASKS" | translate}}</a>     |
+  <a routerLink="/ViewTable">{{"VIEW_TABLE_RESULTS" | translate}}</a>
 </nav>
 
 <div *ngIf="username">
-<h2>Hello {{username}} ({{userRole}}), Welcome to your Task Manager!</h2>
+<h2>{{"HELLO" | translate}} {{username}} ({{userRole}}), {{"WELCOME_MESSAGE" | translate}}!</h2>
 </div>
 
 <div>
-  <button (click)="filter = 'all'">All</button>
-  <button (click)="filter = 'completed'">Completed</button>
-  <button (click)="filter = 'incomplete'">Incomplete</button>
-  <button (click)="filter = 'low'">Low</button>
-  <button (click)="filter = 'medium'">Medium</button>
-  <button (click)="filter = 'high'">High</button>
-  <button (click)="filter = 'past-due'">Past Due</button>
-  <button (click)="filter = 'due-soon'">Due Soon</button>
+  <button (click)="filter = 'all'">{{"ALL" | translate}}</button>
+  <button (click)="filter = 'completed'">{{"COMPLETED" | translate}}</button>
+  <button (click)="filter = 'incomplete'">{{"INCOMPLETE" | translate}}</button>
+  <button (click)="filter = 'low'">{{"LOW" | translate}}</button>
+  <button (click)="filter = 'medium'">{{"MEDIUM" | translate}}</button>
+  <button (click)="filter = 'high'">{{"HIGH" | translate}}</button>
+  <button (click)="filter = 'past-due'">{{"PAST_DUE" | translate}}</button>
+  <button (click)="filter = 'due-soon'">{{"DUE_SOON" | translate}}</button>
 </div>
 
 <div class="mb-3">
-  <label for="sortSelect" class="form-label me-2">Sort By:</label>
+  <label for="sortSelect" class="form-label me-2">{{"SORT_BY" | translate}}:</label>
   <select id="sortSelect" [(ngModel)]="sortBy" class=" form-select w-auto d-inline-block">
-    <option value="none">None</option>
-    <option value="deadline-asc">Deadline (Soonest First)</option>
-    <option value="deadline-desc">Deadline (Latest First)</option>
-    <option value="priority-low">Priority (Low First)</option>
-    <option value="priority-high">Priority (High First)</option>
+    <option value="none">{{"NONE" | translate}}</option>
+    <option value="deadline-asc">{{"DEADLINE_SOONEST" | translate}}</option>
+    <option value="deadline-desc">{{"DEADLINE_LATEST" | translate}}</option>
+    <option value="priority-low">{{"PRIORITY_LOW" | translate}}</option>
+    <option value="priority-high">{{"PRIORITY_HIGH" | translate}}</option>
   </select>
 </div>
 
 <table mat-table [dataSource]="filteredTasks" class="mat-elevation-z8">
 
   <ng-container matColumnDef="check">
-  <th mat-header-cell *matHeaderCellDef> Completed? </th>
+  <th mat-header-cell *matHeaderCellDef> {{"COMPLETED" | translate}}? </th>
   <td mat-cell *matCellDef="let task">
     <input 
       type="checkbox" 
@@ -48,43 +48,43 @@
 </ng-container>
 
 <ng-container matColumnDef="edit">
-  <th mat-header-cell *matHeaderCellDef> Edit Task </th>
+  <th mat-header-cell *matHeaderCellDef> {{"EDIT_TASK" | translate}} </th>
   <td mat-cell *matCellDef="let task">
-    <button (click)="deleteTask(task._id)">Delete</button> |
-    <button [routerLink]="['/EditTask', task._id]">Edit</button>
+    <button (click)="deleteTask(task._id)">{{"DELETE" | translate}}</button> |
+    <button [routerLink]="['/EditTask', task._id]">{{"EDIT" | translate}}</button>
   </td>
 </ng-container>
 
 <ng-container matColumnDef="status">
-  <th mat-header-cell *matHeaderCellDef> Status </th>
+  <th mat-header-cell *matHeaderCellDef> {{"STATUS" | translate}} </th>
   <td mat-cell *matCellDef="let task">
     <div *ngIf="isOverdue(task)" class="text-danger fw-bold">
-      This task is overdue!
+      {{"TASK_OVERDUE" | translate}}
     </div>
     <div *ngIf="!isOverdue(task) && isDueSoon(task)" class="text-warning fw-bold">
-      Deadline approaching soon!
+      {{"DEADLINE_APPROACHING" | translate}}
     </div>
   </td>
 </ng-container>
 
 
   <ng-container matColumnDef="description" >
-    <th mat-header-cell *matHeaderCellDef> Description </th>
+    <th mat-header-cell *matHeaderCellDef> {{"DESCRIPTION" | translate}} </th>
     <td mat-cell *matCellDef="let task" [ngClass]="{ 'completed': task.completed }"> {{task.description}} </td>
   </ng-container>
 
   <ng-container matColumnDef="deadline">
-    <th mat-header-cell *matHeaderCellDef> Deadline </th>
+    <th mat-header-cell *matHeaderCellDef> {{"DEADLINE" | translate}} </th>
     <td mat-cell *matCellDef="let task" [ngClass]="{ 'completed': task.completed }"> {{task.deadline | date }} </td>
   </ng-container>
 
   <ng-container matColumnDef="completed">
-    <th mat-header-cell *matHeaderCellDef> Completed </th>
+    <th mat-header-cell *matHeaderCellDef> {{"COMPLETED" | translate}} </th>
     <td mat-cell *matCellDef="let task" [ngClass]="{ 'completed': task.completed }"> {{task.completed}} </td>
   </ng-container>
 
   <ng-container matColumnDef="priority">
-    <th mat-header-cell *matHeaderCellDef> Priority </th>
+    <th mat-header-cell *matHeaderCellDef> {{"PRIORITY" | translate}} </th>
     <td mat-cell *matCellDef="let task" [ngClass]="{
     'completed': task.completed,
     'priority-high': task.priority === 'high',

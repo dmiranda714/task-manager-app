@@ -1,0 +1,64 @@
+{
+  "HOMEPAGE": {
+    "TITLE": "Willkommen beim Aufgabenmanager!",
+    "SUBTITLE": "Bitte wählen Sie unten eine Option, um zu starten!",
+    "REGISTER": "Registrieren",
+    "LOGIN": "Anmelden"
+  },
+  "REGISTER": {
+  "HOME": "Startseite",
+  "REGISTER": "Registrieren",
+  "USERNAME": "Benutzername",
+  "PASSWORD": "Passwort",
+  "ROLE": "Rolle",
+    "ROLES": {
+    "VIEWER": "Betrachter",
+    "EDITOR": "Bearbeiter",
+    "ADMIN": "Administrator"
+  }
+
+},
+  "LOGOUT": "Abmelden",
+  "LOGIN": "Anmelden",
+  "INACTIVITY_WARNING": "Sie waren längere Zeit inaktiv und werden bald abgemeldet.",
+  "HOME": "Startseite",
+  "USERNAME": "Benutzername",
+  "PASSWORD": "Passwort",
+  "INACTIVTY_ERROR": "Sie wurden aufgrund von Inaktivität abgemeldet",
+  "VIEW_TASKS": "Aufgaben anzeigen",
+  "ADD_TASKS": "Aufgabe hinzufügen",
+  "VIEW_TABLE_RESULTS": "Tabellenergebnisse anzeigen",
+  "ALL": "Alle",
+  "COMPLETED": "Abgeschlossen",
+  "INCOMPLETE": "Unvollständig",
+  "LOW": "Niedrig",
+  "MEDIUM": "Mittel",
+  "HIGH": "Hoch",
+  "PAST_DUE": "Überfällig",
+  "DUE_SOON": "Bald fällig",
+  "SORT_BY": "Sortieren nach",
+  "HELLO": "Hallo",
+"WELCOME_MESSAGE": "Willkommen bei Ihrem Aufgabenmanager",
+"NONE": "Keine",
+"DEADLINE_SOONEST": "Fälligkeitsdatum (frühestes zuerst)",
+  "DEADLINE_LATEST": "Fälligkeitsdatum (spätestes zuerst)",
+  "PRIORITY_LOW": "Priorität (niedrig zuerst)",
+  "PRIORITY_HIGH": "Priorität (hoch zuerst)",
+  "DEADLINE": "Fälligkeitsdatum",
+  "TASK_OVERDUE": "Diese Aufgabe ist überfällig!",
+  "PRIORITY": "Priorität",
+  "DELETE": "Löschen",
+  "EDIT": "Bearbeiten",
+  "DEADLINE_APPROACHING": "Die Frist nähert sich bald!",
+  "NO_TASKS": "Noch keine Aufgaben",
+  "DESCRIPTION": "Beschreibung",
+  "EDIT_TASK": "Aufgabe bearbeiten",
+  "STATUS": "Status",
+  "SESSION_WARNING": "Die Sitzung läuft in 30 Sekunden ab. Sie werden abgemeldet, wenn Sie inaktiv bleiben.",
+"ROLES": {
+    "VIEWER": "Betrachter",
+    "EDITOR": "Bearbeiter",
+    "ADMIN": "Administrator"
+  }
+  
+}

@@ -1,21 +1,21 @@
 <div class="logout-wrapper">
-  <button (click)="logout()">Logout</button>
+  <button (click)="logout()">{{'LOGOUT' | translate}}</button>
 </div>
 
 <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
-  <label>Description</label>
+  <label>{{'DESCRIPTION' | translate}}</label>
   <input type="text" formControlName="description" />
 
-  <label>Deadline</label>
+  <label>{{"DEADLINE" | translate}}</label>
   <input type="date" formControlName="deadline" />
 
-  <label>Priority</label>
+  <label>{{"PRIORITY" | translate}}</label>
   <select formControlName="priority">
-    <option value="low">Low</option>
-    <option value="medium">Medium</option>
-    <option value="high">High</option>
+    <option value="low">{{"LOW" | translate}}</option>
+    <option value="medium">{{"MEDIUM" | translate}}</option>
+    <option value="high">{{"HIGH" | translate}}</option>
   </select>
 
-  <button type="submit" [disabled]="taskForm.invalid">Add Task</button>
+  <button type="submit" [disabled]="taskForm.invalid">{{"ADD_TASKS" | translate}}</button>
 </form>
 

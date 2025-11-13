@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { TokenType } from '@angular/compiler';
 import { AuthService } from '../services/auth.service';
 import { UserService } from '../services/user.service';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -18,8 +19,13 @@ export class TaskListComponent implements OnInit{
   userRole: string | null = '';
   tasks: Task[] = [];
   
-  constructor(private taskService: TaskService, private router: Router, private authService: AuthService, private userService: UserService) {
+  
+  constructor(private taskService: TaskService, private router: Router, private authService: AuthService, private userService: UserService, private translate: TranslateService) {
+    translate.setDefaultLang('en');
+  }
 
+  switchLanguage(lang: string) {
+    this.translate.use(lang);
   }
 
   ngOnInit(): void {

@@ -1,11 +1,11 @@
 <div class="button-group">
-    <button routerLink="/">Home</button>
+    <button routerLink="/">{{'REGISTER.HOME' | translate}}</button>
 </div>
 
-<h2>Register</h2>
+<h2>{{'REGISTER.REGISTER' | translate}}</h2>
 
 <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
-    <label for="username">Username:</label>
+    <label for="username">{{'REGISTER.USERNAME' | translate}}:</label>
     <input
         type="text"
         id="username"
@@ -13,7 +13,7 @@
         [(ngModel)]="user.username"
         required
         />
-    <label for="password">Password:</label>
+    <label for="password">{{'REGISTER.PASSWORD' | translate}}:</label>
     <input
         type="password"
         id="password"
@@ -22,14 +22,14 @@
         required
         />
 
-    <label for="role">Role:</label>
+    <label for="role">{{'REGISTER.ROLE' | translate}}:</label>
     <select id="role" name="role" [(ngModel)] = "user.role">
-        <option value="viewer">viewer</option>
-        <option value="editor">Editor</option>
-        <option value="admin">Admin</option>
+        <option value="viewer">{{'REGISTER.ROLES.VIEWER' | translate}}</option>
+        <option value="editor">{{'REGISTER.ROLES.EDITOR' | translate}}</option>
+        <option value="admin">{{'REGISTER.ROLES.ADMIN' | translate}}</option>
     </select>
 
-    <button type="submit">Register</button>
+    <button type="submit">{{'REGISTER.REGISTER' | translate}}</button>
 </form>
 
 <p *ngIf="message">{{message}}</p>

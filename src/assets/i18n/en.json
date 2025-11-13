@@ -1,0 +1,69 @@
+{
+  "LOGIN": "Login",
+  "LOGOUT": "Logout",
+  "HOME" : "Home", 
+  "INACTIVITY_WARNING": "You’ve been inactive. You will be logged out soon.",
+  "USERNAME": "Username",
+  "PASSWORD": "Password",
+  "INACTIVTY_ERROR": "You were logged out due to inactivity",
+  "VIEW_TASKS" : "View Tasks",
+  "ADD_TASKS" : "Add Task",
+  "VIEW_TABLE_RESULTS" : "View Table Results",
+  "ALL" : "All",
+  "COMPLETED" : "Completed",
+  "INCOMPLETE" : "Incomplete",
+  "LOW" : "Low",
+  "MEDIUM" : "Medium",
+  "HIGH" : "High",
+  "PAST_DUE" : "Past Due",
+  "DUE_SOON" : "Due Soon",
+  "SORT_BY" : "Sort By",
+  "HELLO" : "Hello",
+  "WELCOME_MESSAGE" : "Welcome to your Task Manager",
+  "NONE" : "None",
+  "DEADLINE_SOONEST" : "Deadline (Soonest First)",
+  "DEADLINE_LATEST" : "Deadline (Latest First)",
+  "PRIORITY_LOW" : "Priority (Low First)",
+  "PRIORITY_HIGH" : "Priority (High First)",
+  "DEADLINE" : "Deadline",
+  "TASK_OVERDUE" : "This task is overdue!",
+  "PRIORITY" : "Priority",
+  "DELETE" : "Delete",
+  "EDIT" : "Edit",
+  "DEADLINE_APPROACHING" : "Deadline approaching soon!",
+  "NO_TASKS" : "No tasks yet.",
+  "DESCRIPTION" : "Description",
+  "EDIT_TASK" : "Edit Task", 
+  "STATUS" : "Status",
+  "SESSION_WARNING": "Session is about to expire in 30 seconds. You will be logged out unless you stay active.",
+   "HOMEPAGE": {
+    "TITLE" :"Welcome to Task Manager!", 
+    "SUBTITLE": "Please choose your option below to get started!", 
+    "REGISTER" : "Register",
+    "LOGIN" : "Login"
+  },
+  "REGISTER": {
+    "HOME" : "Home",
+    "REGISTER" : "Register", 
+    "ROLE": "Role",
+      "USERNAME": "Username",
+      "PASSWORD": "Password",
+    "ROLES": {
+      "VIEWER": "Viewer",
+      "EDITOR": "Editor",
+      "ADMIN": "Admin"
+    }
+
+  }
+,
+"ROLES": {
+      "VIEWER": "Viewer",
+      "EDITOR": "Editor",
+      "ADMIN": "Admin"
+    }
+
+}
+
+
+ 
+

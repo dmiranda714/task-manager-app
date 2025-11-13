@@ -1,0 +1,64 @@
+{
+  "HOMEPAGE": {
+    "TITLE": "Bienvenue dans le gestionnaire de tâches !",
+    "SUBTITLE": "Veuillez choisir une option ci-dessous pour commencer !",
+    "REGISTER": "S'inscrire",
+    "LOGIN": "Connexion"
+  },
+  "REGISTER": {
+  "HOME": "Accueil",
+  "REGISTER": "S'inscrire",
+  "USERNAME": "Nom d'utilisateur",
+  "PASSWORD": "Mot de passe",
+  "ROLE": "Rôle",
+    "ROLES": {
+    "VIEWER": "Lecteur",
+    "EDITOR": "Éditeur",
+    "ADMIN": "Administrateur"
+  }
+
+}
+,
+  "LOGOUT": "Déconnexion",
+  "LOGIN": "Connexion",
+  "INACTIVITY_WARNING": "Vous êtes inactif depuis un moment, vous allez être déconnecté.",
+  "HOME": "Accueil",
+  "USERNAME": "Nom d'utilisateur",
+  "PASSWORD": "Mot de passe",
+  "INACTIVTY_ERROR": "Vous avez été déconnecté en raison d'inactivité",
+  "VIEW_TASKS": "Voir les tâches",
+  "ADD_TASKS": "Ajouter une tâche",
+  "VIEW_TABLE_RESULTS": "Voir les résultats du tableau",
+  "ALL": "Toutes",
+  "COMPLETED": "Terminées",
+  "INCOMPLETE": "Incomplètes",
+  "LOW": "Faible",
+  "MEDIUM": "Moyenne",
+  "HIGH": "Élevée",
+  "PAST_DUE": "En retard",
+  "DUE_SOON": "Bientôt due",
+  "SORT_BY": "Trier par",
+  "HELLO": "Bonjour",
+"WELCOME_MESSAGE": "Bienvenue dans votre gestionnaire de tâches",
+"NONE": "Aucun",
+"DEADLINE_APPROACHING": "L'échéance approche bientôt !",
+"DEADLINE_SOONEST": "Échéance (la plus proche en premier)",
+  "DEADLINE_LATEST": "Échéance (la plus éloignée en premier)",
+  "PRIORITY_LOW": "Priorité (faible en premier)",
+  "PRIORITY_HIGH": "Priorité (élevée en premier)",
+  "DEADLINE": "Échéance",
+  "TASK_OVERDUE": "Cette tâche est en retard !",
+  "PRIORITY": "Priorité",
+  "DELETE": "Supprimer",
+  "EDIT": "Modifier",
+  "NO_TASKS": "Pas encore de tâches",
+  "DESCRIPTION": "Description",
+  "EDIT_TASK": "Modifier la tâche",
+  "STATUS": "Statut",
+  "SESSION_WARNING": "La session va expirer dans 30 secondes. Vous serez déconnecté si vous restez inactif.",
+"ROLES": {
+    "VIEWER": "Lecteur",
+    "EDITOR": "Éditeur",
+    "ADMIN": "Administrateur"
+  }
+}

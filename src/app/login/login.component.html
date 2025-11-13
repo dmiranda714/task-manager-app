@@ -1,26 +1,26 @@
 
 <div class="button-group">
-    <button routerLink="/">Home</button>
+    <button routerLink="/">{{"HOME" | translate}}</button>
 </div>
 
 <div class="login-container">
-    <h2>Login</h2>
+    <h2>{{"LOGIN" | translate}}</h2>
 
     <form (ngSubmit)="login()">
         <div>
-            <label for="username">Username:</label>
+            <label for="username">{{"USERNAME" | translate}}</label>
             <input id="username" type="text" [(ngModel)]="user.username" name="username" required>
 
         </div>
 
         <div>
-            <label for="password">Password:</label>
+            <label for="password">{{"PASSWORD" | translate}}</label>
             <input id="password" type="password" [(ngModel)]="user.password" name="password" required>
             
         </div>
 
-        <button type="submit">Login</button>
+        <button type="submit">{{"LOGIN" | translate}}</button>
 
     </form>
-    <p *ngIf="errorMessage" style="color: red">{{errorMessage}}</p>
+    <p *ngIf="errorMessage" style="color: red">{{"INACTIVTY_ERROR" | translate}}</p>
 </div>

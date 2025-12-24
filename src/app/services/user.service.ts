@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { APP_CONFIG } from '../config/app.config';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class UserService {
-  private apiURL = 'http://localhost:3000/api/todoapp/'
+  private apiURL = APP_CONFIG.api.baseUrl;
 
   constructor(private http: HttpClient, private router: Router) {
 

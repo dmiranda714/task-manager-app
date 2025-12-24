@@ -6,5 +6,11 @@
   <option value="zh">🇨🇳 中文</option>
 </select>
 
+<button (click)="signInWithGoogle()" [disabled]="!isTokenClientReady">
+  Sign in with Google
+</button>
+
+
+
 
 <router-outlet></router-outlet>

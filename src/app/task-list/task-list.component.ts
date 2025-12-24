@@ -7,17 +7,23 @@ import { AuthService } from '../services/auth.service';
 import { UserService } from '../services/user.service';
 import { TranslateService } from '@ngx-translate/core';
 
+declare const gapi: any;
+declare const google: any;
+
 
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
+
 export class TaskListComponent implements OnInit{
   
   username: string | null = '';
   userRole: string | null = '';
   tasks: Task[] = [];
+  isSignedInGoogle = false;
+  
   
   
   constructor(private taskService: TaskService, private router: Router, private authService: AuthService, private userService: UserService, private translate: TranslateService) {
@@ -29,6 +35,9 @@ export class TaskListComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.authService.signedIn$.subscribe(value => {
+      this.isSignedInGoogle = value;
+    })
     this.username = this.authService.getUsername();
     this.userRole = this.authService.getUserRole();
     this.taskService.getTasks().subscribe({
@@ -127,6 +136,55 @@ export class TaskListComponent implements OnInit{
     const threeDaysInMs = 3 * 24 * 60 * 60 * 1000;
     return diff > 0 && diff <= threeDaysInMs;
   }
+
+  async createCalendarEvent(task: any) {
+    const Date = task.deadline.split('T')[0]; 
+
+    const event = {
+      summary: task.description,
+      start: { date: Date },
+      end:   { date: Date }
+    };
+
+    try {
+      const response = await gapi.client.calendar.events.insert({
+        calendarId: 'primary', 
+        resource: event
+      })
+      console.log('Event Created', response);
+      this.translate.get("CALENDAR_ADD").subscribe((translatedMsg: string) => {alert(translatedMsg);})
+      task.calendarEventId = response.result.id;
+    } catch (err) {
+      console.error('Error creating event:', err);
+      this.translate.get("CALENDAR_CREATE_ERROR").subscribe((translatedMsg: string) => {alert(translatedMsg);})
+    }
+  }
+
+  deleteCalendarEvent(task: any) {
+  this.translate.get('CALENDAR_DELETE_WARNING').subscribe((message: string) => {
+    if (!confirm(message)) {
+      return; 
+    }
+
+    if (!task.calendarEventId) {
+      console.warn('No calendar event linked to this task');
+      this.translate.get("CALENDAR_DUPLICATE").subscribe((translatedMsg: string) => { alert(translatedMsg); });
+      return;
+    }
+
+    gapi.client.calendar.events.delete({
+      calendarId: 'primary',
+      eventId: task.calendarEventId
+    }).then(() => {
+      console.log("Event deleted from calendar");
+      this.translate.get("CALENDAR_DELETE").subscribe((translatedMsg: string) => { alert(translatedMsg); });
+      task.calendarEventId = null;
+    }).catch((err: any) => {
+      console.error('Error deleting event:', err);
+      this.translate.get("CALENDAR_DELETE_ERROR").subscribe((translatedMsg: string) => { alert(translatedMsg); });
+    });
+  });
+}
 
   logout() {
   this.authService.logout();

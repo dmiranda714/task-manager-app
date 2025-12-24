@@ -53,6 +53,8 @@
     {{"PRIORITY" | translate}}: {{ task.priority }}<br>
     <button (click)="deleteTask(task._id)">{{"DELETE" | translate}}</button>
     <button [routerLink]="['/EditTask', task._id]">{{"EDIT" | translate}}</button>
+    <button (click)="createCalendarEvent(task)" [disabled]="!isSignedInGoogle">{{"ADD_TO_CALENDAR" | translate}}</button>
+    <button (click)="deleteCalendarEvent(task)" [disabled]="!isSignedInGoogle">{{"REMOVE_FROM_CALENDAR" | translate}}</button>
     <hr>
   </li>
 </ul>

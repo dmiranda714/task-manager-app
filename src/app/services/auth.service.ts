@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { jwtDecode } from 'jwt-decode';
 import { Router } from '@angular/router';
 import { InactivityService } from './inactivity.service';
+import { BehaviorSubject } from 'rxjs';
+
 
 export interface TokenPayload {
   userId: string;
@@ -15,12 +17,19 @@ export interface TokenPayload {
 
 export class AuthService {
 
-  constructor(private router: Router, private inactivityService : InactivityService) {
+  private isSignedInGoogle = new BehaviorSubject<boolean>(false);
+  signedIn$ = this.isSignedInGoogle.asObservable();
 
+  constructor(private router: Router, private inactivityService : InactivityService) {
+   
   }
 
   getToken(): string | null {
     return localStorage.getItem('token');
+  }
+
+  getGoogleToken(): string | null {
+    return localStorage.getItem('google_access_token');
   }
 
   getDecodedToken(): TokenPayload | null {
@@ -58,5 +67,9 @@ export class AuthService {
   }
 }
 
-  
+setSignedIn(value: boolean) {
+  this.isSignedInGoogle.next(value);
+}
+
+
 }

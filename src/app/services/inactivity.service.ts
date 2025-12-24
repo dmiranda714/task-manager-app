@@ -4,14 +4,15 @@ import { UserService } from './user.service';
 import { Subject } from 'rxjs';
 import { AuthService } from './auth.service';
 import { TranslateService } from '@ngx-translate/core';
+import { APP_CONFIG } from '../config/app.config';
 
 @Injectable({ providedIn: 'root'})
 export class InactivityService {
     private timeoutId: any;
     private warningTimeoutId: any;
     private activityHandler = this.resetTimers.bind(this);
-    private readonly timeout = 30 * 1000;
-    private readonly warningTime = 15 * 1000;
+    private readonly timeout = APP_CONFIG.timeouts.timeout;
+    private readonly warningTime = APP_CONFIG.timeouts.warningTime
 
     constructor(private router: Router, private ngZone: NgZone, private userService: UserService, private tranlsateService : TranslateService) {
 

@@ -40,3 +40,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Project Specific files
+/Users/dmiranda/Documents/tutorial/ui/todoapp/src/assets/scripts/googleEvent.js

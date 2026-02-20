@@ -64,6 +64,7 @@
   "CALENDAR_DELETE": "Événement supprimé avec succès",
   "CALENDAR_DUPLICATE": "Cet événement a déjà été supprimé",
   "CALENDAR_DELETE_ERROR": "Erreur lors de la suppression de l'événement",
+  "SIGN_IN_GOOGLE": "Se connecter avec Google",
 "ROLES": {
     "VIEWER": "Lecteur",
     "EDITOR": "Éditeur",

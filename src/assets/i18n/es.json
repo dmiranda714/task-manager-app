@@ -44,6 +44,7 @@
   "CALENDAR_DELETE": "Evento eliminado con éxito",
   "CALENDAR_DUPLICATE": "Este evento ya ha sido eliminado",
   "CALENDAR_DELETE_ERROR": "Error al eliminar el evento",
+  "SIGN_IN_GOOGLE": "Iniciar sesión con Google",
   "HOMEPAGE": {
     "TITLE" :"¡Bienvenido al Administrador de Tareas!", 
     "SUBTITLE": "¡Por favor elige una opción para comenzar!",

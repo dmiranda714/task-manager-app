@@ -44,6 +44,7 @@
   "CALENDAR_DELETE": "Event has been deleted successfully",
   "CALENDAR_DUPLICATE" : "This event has already been deleted",
   "CALENDAR_DELETE_ERROR": "Error deleting event",
+  "SIGN_IN_GOOGLE": "Sign in with Google",
    "HOMEPAGE": {
     "TITLE" :"Welcome to Task Manager!", 
     "SUBTITLE": "Please choose your option below to get started!", 

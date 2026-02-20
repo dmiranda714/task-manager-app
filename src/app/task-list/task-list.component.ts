@@ -35,6 +35,8 @@ export class TaskListComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    const start = performance.now();
+    console.log("Page load started");
     this.authService.signedIn$.subscribe(value => {
       this.isSignedInGoogle = value;
     })
@@ -43,11 +45,14 @@ export class TaskListComponent implements OnInit{
     this.taskService.getTasks().subscribe({
       next: (data) => {
         this.tasks = data;
+        setTimeout(() => { 
+          const end = performance.now(); console.log(`Page fully rendered in ${(end - start).toFixed(2)} ms`); 
+        });
       },
       error: (err) => {
         console.error('Error fetching tasks:', err);
       }
-    })
+    });
   }
 
   deleteTask(id: string) : void {

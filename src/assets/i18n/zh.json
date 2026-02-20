@@ -63,6 +63,7 @@
   "CALENDAR_DELETE": "事件已成功删除",
   "CALENDAR_DUPLICATE": "此事件已被删除",
   "CALENDAR_DELETE_ERROR": "删除事件时出错",
+  "SIGN_IN_GOOGLE": "使用 Google 登录",
 "ROLES": {
     "VIEWER": "查看者",
     "EDITOR": "编辑者",

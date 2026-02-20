@@ -63,6 +63,7 @@
   "CALENDAR_DELETE": "Ereignis erfolgreich gelöscht",
   "CALENDAR_DUPLICATE": "Dieses Ereignis wurde bereits gelöscht",
   "CALENDAR_DELETE_ERROR": "Fehler beim Löschen des Ereignisses",
+  "SIGN_IN_GOOGLE": "Mit Google anmelden",
 "ROLES": {
     "VIEWER": "Betrachter",
     "EDITOR": "Bearbeiter",

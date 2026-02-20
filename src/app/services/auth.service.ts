@@ -5,6 +5,7 @@ import { InactivityService } from './inactivity.service';
 import { BehaviorSubject } from 'rxjs';
 
 
+
 export interface TokenPayload {
   userId: string;
   username : string;
@@ -17,7 +18,7 @@ export interface TokenPayload {
 
 export class AuthService {
 
-  private isSignedInGoogle = new BehaviorSubject<boolean>(false);
+  isSignedInGoogle = new BehaviorSubject<boolean>(false);
   signedIn$ = this.isSignedInGoogle.asObservable();
 
   constructor(private router: Router, private inactivityService : InactivityService) {

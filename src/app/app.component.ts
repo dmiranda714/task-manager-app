@@ -27,7 +27,6 @@ export class AppComponent implements OnInit {
     if ((window as any).tokenClient) {
       this.isTokenClientReady = true;
       clearInterval(interval);
-      console.log("Token client is ready, enabling button");
     }
   }, 500);
 }

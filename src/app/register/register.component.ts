@@ -31,7 +31,7 @@ export class RegisterComponent {
           this.router.navigate(['']);
         },
         error: () => {
-          alert('Failed to add task');
+          alert('Failed to add User');
         }
       });
   }
